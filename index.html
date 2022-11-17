@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>WEBSITE STRENGTH TRAING CENTRE</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+
+   #more {display: none;}
+
+   .about-right-col img {
+    width: 50%;
+   }
+
+  .container {
+    width: 100%;
+    display: flex;
+    color:  #ffffff;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    }
+
+ .left {
+    flex-basis: 50%;
+    max-width: 450px;
+}
+
+.btn {
+    font-size: large;
+    background: #5150ff;
+    padding: 10px 20px;
+    color: black;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 0px;
+}
+
+#signup {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: rgb(76 151 140 / 46%);
+    clip-path: polygon(0% 0%,100% 0%,100% 100%,80% 80%,0% 100%);
+}
+
+#members {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: rgb(41 160 51 / 46%);
+    clip-path: polygon(0% 0%,100% 0%,100% 100%,80% 80%,0% 100%);
+}
+
+.menu a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  border: 8px solid #0cf59b;
+  max-width: 350px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span id ="blue">SQUAD SP</span>
+            </div>
+            <div class="menu">
+                <a href="#default"></a>
+                <a class="active" href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#members">Members</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer"> 
+                <div class="icon" style="font-size:25px;">
+                    <ion-icon name="logo-facebook" onclick="window.location.href='https://www.facebook.com/login/'"></ion-icon>
+                    <ion-icon name="logo-instagram" onclick="window.location.href='https://www.instagram.com/accounts/login/'"></ion-icon>
+                    <ion-icon name="logo-google" onclick="window.location.href='https://accounts.google.com/'"></ion-icon>
+                    <ion-icon name="logo-twitter" onclick="window.location.href='https://twitter.com/i/flow/login'"></ion-icon>
+                    </div>
+                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="left">
+                <h1 style="color: #ff0010;">FITNESS FREAK</h1>
+                <br>
+            <h3 style="color: #dbfd00;">"FITNESS IS LIKE A RELATIONSHIP.
+                YOU CAN'T CHEAT AND EXPECT IT TO WORK."
+            </h3>
+            <br>
+            <p style="color: #15ef00;">Today you will do what others won't so tommorow you can accomplish what others can't.</p>
+            </div>
+            <br>
+            <br>
+            <div id="id01" class="right">
+               <button class="btn" onclick="window.location.href='login.html'">SIGN UP</button>
+            </div>
+            <br>
+            <div class="md-center">
+             <button class="btn" onclick="openForm()">LOGIN</button>
+                <div class="form-popup" id="myForm" style="top: 100px;">
+                  <form action="/action_page.php" class="form-container">
+                    <h1 style="color: #0018ff;">Login</h1>
+                     <label for="email" style="color: #070707;"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" name="email" required>
+                     <label for="psw" style="color: #070707;"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                    <button type="submit" class="btn">Login</button>
+                   <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  </form>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <section id="about">
+        <div class="about-row">
+            <div class="about-left-col">
+                <h1>About</h1>
+                <p> The biggest struggle is probably motivation. Sometimes it's hard for us to get out of bed in the morning, or even get on my elliptical at home. But once you land at this fitness club , it's all good—you will love being here! The fitness coach are so nice and welcoming, 
+                    plus they're always trying new <span id="dots">...</span><span id="more">things with their workouts that keep things interesting for everyone involved.
+                    You will take your fitness goals seriously and concede them into reality which will enhance you to build strength, endurance, flexibility, and even your confidence through our innovative fitness classes. If you're not sure where 
+                    to start, just ask us! We are always happy to share what works best for our clients and their goals.
+                </span></p>
+                <button class="btn" onclick="myFunction()" id="myBtn">Read more</button> 
+            </div>
+            <div class="about-right-col">
+                <img src="yerm.jpg">
+            </div>
+        </div>
+    </section>
+    <section id="signup">
+        <div class="signup-row">
+          <div class="signup-left-col">
+            <img src="popi.jpg">
+          </div> 
+          <div class="signup-right-col">
+            <h1>BUILD BODY</h1>
+            <h3>NOT TO FANTASIZE BUT FOR YOUR WELL-BEING</h3>
+        </div> 
+        </div>
+    </section>
+    <section id="services">
+        <div class="services-info">
+                <h1>Our Services</h1>
+        <p>What we Provide</p>
+        </div>
+        <div class="services-row" style="color:#ffffff;">
+            <div class="services-box">
+                <style>
+                    body {
+                      background-repeat: no-repeat;
+                    }
+                    </style>
+                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <h2>Aerobics</h2>
+            <p>	System of physical conditioning that increases the efficiency of the body’s intake of oxygen,</p>
+            <p> thereby stimulating the cardiovascular system, developing endurance, and reducing body fat. </p>
+            </div>
+    
+            <div class="services-box1">
+                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <h2>Cardio</h2>
+            <p>	Cardio exercise also helps to reduce the risk of several deadly diseases and enhances sleep quality. </p>
+            </div>
+    
+            <div class="services-box2">
+                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <h2>Yoga</h2>
+            <p>	Yoga can increase strength, improve flexibility, and ease aches and pains. </p>
+            </div>
+    
+            <div class="services-box3">
+                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <h2>Zumba</h2>
+            <p>	Zumba is a great alternative to traditional fitness program and it is a dance style which can be taken up by the people of all age groups.</p> 
+                <p>It reduces the risk of heart disease, reduce blood pressure and bad cholesterol.</p>
+            </div>
+    
+            <div class="services-box4">
+                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <h2>Crossfit</h2>
+            <p>	CrossFit exercises increase VO2max, strength, endurance, and improves the body composition. </p>
+            </div>
+    
+            <div class="services-box5">
+                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <h2>Weight Training</h2>
+            <p>Strength Training can help us to lose weight, and it can increase our metabolism to burn maximum calories.  </p>
+            </div>
+    
+        </div>
+    </section>
+    
+    <section id="members">
+    <div class="services-info">
+                <h1>Our Members</h1>
+        <p>What our gym member says</p>
+    </div> 
+    <div class="member-card">
+        <img src="member.png">
+        <p>
+            Doing gym is good for healthy life. it helps our body to fit. it release stress from our mind.From Rajasthan,doing gym is good for healthy life. it helps our body to fit. it release stress from our mind.
+        </p>
+        <h2>* Maria Sharapova, Gym Client</h2>
+    <br>
+    </div>
+    </section>
+
+    <section id="contact">
+            <div class="services-info">
+                <h1>Get in Touch</h1>
+        <p> We are Available</p>
+    </div>
+    
+    <div class="contact-row">
+        <div class="contact-left-col">
+            <div class="form">
+                <input type="text" name="" placeholder="E-mail">
+                <input type="text" name="" placeholder="Subject"><br>
+                <textarea rows="10" cols="40" placeholder="Message"></textarea>
+                <br> <button class="btn">Send</button>
+            </div>
+        </div>
+            <div class="contact-right-col">
+                <h1><i class="fa fa-envelope-o" aria-hidden="true"></i> E-mail</h1> <p>nd03081998@gmail.com</p><br>
+                 <h1><i class="fa fa-phone" aria-hidden="true"></i> Mobile</h1><p>823944147, 823944140</p>
+                 <br>
+                 <h1><i class="fa fa-location-arrow" aria-hidden="true"></i> Address</h1>
+                  <p> Near Ram Mandir<br>
+                      Ward no.5, RT NAGAR ,BENGALURU
+                  </p>
+            </div>
+    </div>
+    
+    
+    </section>
+    
+    <div class="footer-fluid">
+        <div class="footer">    
+        <section id="footer">
+            <h1><span id="blue">SQUAD SP</span></h1>
+            
+            <p style="color: #ff0052;">©2022 - All Right Reserved - Made By SQUAD SP, BENGALURU, India </p>
+            <div class="icon" style="font-size:25px;">
+                <ion-icon name="logo-facebook" onclick="window.location.href='https://www.facebook.com/login/'"></ion-icon>
+                <ion-icon name="logo-instagram" onclick="window.location.href='https://www.instagram.com/accounts/login/'"></ion-icon>
+                <ion-icon name="logo-google" onclick="window.location.href='https://accounts.google.com/'"></ion-icon>
+                <ion-icon name="logo-twitter" onclick="window.location.href='https://twitter.com/i/flow/login'"></ion-icon>
+                </div>
+                </section>
+                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>    
+                    
+                    <script>
+                        function myFunction() {
+                          var dots = document.getElementById("dots");
+                          var moreText = document.getElementById("more");
+                          var btnText = document.getElementById("myBtn");
+                        
+                          if (dots.style.display === "none") {
+                            dots.style.display = "inline";
+                            btnText.innerHTML = "Read more"; 
+                            moreText.style.display = "none";
+                          } else {
+                            dots.style.display = "none";
+                            btnText.innerHTML = "Read less"; 
+                            moreText.style.display = "inline";
+                          }
+                        }
+                    </script>
+
+<script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+
+    </body></html>
+    
